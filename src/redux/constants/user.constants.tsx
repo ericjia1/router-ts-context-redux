@@ -8,8 +8,8 @@ export enum USER_ACTION_TYPES {
 }
 
 export const userDefaultState: UserI = {
-  firstName: "",
-  lastName: "",
+  firstName: "John",
+  lastName: "Doe",
 };
 
 export interface GetUserAction {

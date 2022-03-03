@@ -5,8 +5,19 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { PageHelper, Paths } from "../../Router";
+import { connect } from "react-redux";
+import { UserI } from "../../../redux/constants/user.constants";
 
-const HeaderNav = () => {
+interface ConnectedProps {
+  user: UserI;
+}
+interface StateProps {
+  user: UserI;
+}
+export type HeaderNavProps = ConnectedProps;
+
+const HeaderNav: React.FC<HeaderNavProps> = (props) => {
+  const { user } = props;
   const handleRedirect = (path: string) => {
     PageHelper.openPage(path);
   };
@@ -15,6 +26,9 @@ const HeaderNav = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            {`${user.firstName} ${user.lastName}`}
+          </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Button
               variant="text"
@@ -48,4 +62,10 @@ const HeaderNav = () => {
   );
 };
 
-export default HeaderNav;
+const mapStateToProps = (state: any): StateProps => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderNav);
