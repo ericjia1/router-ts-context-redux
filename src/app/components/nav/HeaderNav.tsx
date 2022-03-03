@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { PageHelper, Paths } from "../../route/routerPath";
 import Button from "@mui/material/Button";
+import { PageHelper, Paths } from "../../Router";
 
 const HeaderNav = () => {
   const handleRedirect = (path: string) => {

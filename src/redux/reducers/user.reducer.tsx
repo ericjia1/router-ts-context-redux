@@ -1,13 +1,16 @@
-import { UserStateI } from "../constants/user.contants";
+import {
+  UserActionTypes,
+  userDefaultState,
+  UserI,
+  USER_ACTION_TYPES,
+} from "../constants/user.constants";
 
-const initialState: UserStateI = {
-  firstName: "",
-  lastName: "",
-};
-
-const user = (state: UserStateI = initialState, action: any): UserStateI => {
+const user = (
+  state: UserI = userDefaultState,
+  action: UserActionTypes
+): any => {
   switch (action.type) {
-    case "GET_USER":
+    case USER_ACTION_TYPES.GET_USER_SUCCESS:
       return { ...state };
     default:
       return state;
