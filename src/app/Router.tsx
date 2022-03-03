@@ -12,31 +12,35 @@ export const Paths = {
   dashboard: "/dashboard",
 };
 
-export const Links = [
-  {
-    path: Paths.default,
-    render: (props: any) => <Home {...props} />,
-  },
-  {
-    path: Paths.home,
-    render: (props: any) => <Home {...props} />,
-  },
-  {
-    path: Paths.about,
-    render: (props: any) => <About {...props} />,
-  },
-  {
-    path: Paths.dashboard,
-    render: (props: any) => <Dashboard {...props} />,
-  },
-];
-
 export const Router = (props: any) => {
-  const routes = Links.map((item, i) => (
-    <Route exact path={item.path} render={item.render} key={i + "-public"} />
-  ));
-
-  return <Switch>{routes}</Switch>;
+  return (
+    <Switch>
+      <Route
+        exact
+        path={Paths.default}
+        render={() => <Home {...props} />}
+        key={"default-public"}
+      />
+      <Route
+        exact
+        path={Paths.home}
+        render={() => <Home {...props} />}
+        key={"home-public"}
+      />
+      <Route
+        exact
+        path={Paths.about}
+        render={() => <About {...props} />}
+        key={"about-public"}
+      />
+      <Route
+        exact
+        path={Paths.dashboard}
+        render={() => <Dashboard {...props} />}
+        key={"dashboard-public"}
+      />
+    </Switch>
+  );
 };
 
 export class PageHelper {
