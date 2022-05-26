@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 
 interface PageTitleI {
@@ -8,9 +8,11 @@ interface PageTitleI {
 const PageTitle = (props: PageTitleI) => {
   const { title } = props;
   return (
-    <Typography gutterBottom variant="h4" component="div">
-      {title}
-    </Typography>
+    <Container maxWidth="lg" sx={{mt: 1, mb: 2}}>
+      <Typography gutterBottom variant="h5" component="div">
+        {title}
+      </Typography>
+    </Container>
   );
 };
 
