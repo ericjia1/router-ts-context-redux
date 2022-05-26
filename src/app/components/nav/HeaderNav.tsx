@@ -11,7 +11,7 @@ import { UserI } from "../../../redux/constants/user.constants";
 interface ConnectedProps {
   user: UserI;
 }
-interface StateProps {
+export interface StateProps {
   user: UserI;
 }
 export type HeaderNavProps = ConnectedProps;
