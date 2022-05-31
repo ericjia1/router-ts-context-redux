@@ -3,13 +3,16 @@ import { Route, Switch } from "react-router";
 import { history } from "../route/history";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
+import { HomeContextProvider } from "./pages/home/Context/HomeContext";
+import Home from "./pages/home/Home";
+import TeamPage from "./pages/TeamPage";
 
 export const Paths = {
   default: "/",
   home: "/",
   about: "/about",
   dashboard: "/dashboard",
+  team: "/team",
 };
 
 export const Router = (props: any) => {
@@ -18,7 +21,11 @@ export const Router = (props: any) => {
       <Route
         exact
         path={Paths.default}
-        render={() => <Home {...props} />}
+        render={() => (
+          <HomeContextProvider>
+            <Home {...props} />{" "}
+          </HomeContextProvider>
+        )}
         key={"default-public"}
       />
       <Route
@@ -38,6 +45,12 @@ export const Router = (props: any) => {
         path={Paths.dashboard}
         render={() => <Dashboard {...props} />}
         key={"dashboard-public"}
+      />
+      <Route
+        exact
+        path={Paths.team}
+        render={() => <TeamPage {...props} />}
+        key={"team-public"}
       />
     </Switch>
   );

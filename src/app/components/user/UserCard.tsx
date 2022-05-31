@@ -12,11 +12,12 @@ interface UserCardI {
   firstName: string;
   lastName: string;
   title?: string;
+  subTitle?: string;
   image?: string;
 }
 
 export const UserCard = (props: UserCardI) => {
-  const { firstName, lastName, title, image } = props;
+  const { firstName, lastName, title, subTitle, image } = props;
 
   return (
     <Container maxWidth="sm">
@@ -36,6 +37,9 @@ export const UserCard = (props: UserCardI) => {
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {title ? title : "Title not Available"}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {subTitle ? subTitle : "Sub Title not Available"}
           </Typography>
         </CardContent>
       </Card>
