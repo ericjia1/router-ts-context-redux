@@ -12,10 +12,9 @@ function HomeTitleWrapper(props: HomeTitleWrapperI) {
       <br />
       <HomeInput
         onInputChange={onInputChange}
-        title={"Title Input"}
+        title={"Title Input using Props"}
         notes="Type here to change Title"
-      ></HomeInput>
-      
+      />
     </>
   );
 }

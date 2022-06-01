@@ -1,13 +1,22 @@
 import React, { useContext, useState } from "react";
 import { connect } from "react-redux";
+import { UserI } from "../../../redux/constants/user.constants";
 import PageTitle from "../../components/title/PageTitle";
 import UserCard from "../../components/user/UserCard";
 import ContainerWrapper from "../../components/wrapper/ContainerWrapper";
 import { HomeContext } from "./Context/HomeContext";
 import HomeForm from "./HomeForm";
 
-export const Home = (props: any) => {
-  const { user } = props;
+interface IOwnProps {}
+interface IConnectedProps {
+  user: UserI;
+}
+interface IDispatchProps {}
+
+export type HomeProps = IOwnProps & IConnectedProps & IDispatchProps;
+
+export const Home = (props: HomeProps) => {
+  const { user} = props;
   const [title, setTitle] = useState("");
   const { homeState } = useContext(HomeContext);
   const handleChangeTitle = (titleInput: string) => setTitle(titleInput);

@@ -7,7 +7,7 @@ export const About = (props: any) => {
   return (
     <>
       <PageTitle title={"About Page"} />
-      <ContainerWrapper width={"lg"}>dfd</ContainerWrapper>
+      <ContainerWrapper width={"lg"}>Here is the about page</ContainerWrapper>
     </>
   );
 };

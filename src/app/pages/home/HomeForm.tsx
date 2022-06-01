@@ -1,4 +1,5 @@
 import React from "react";
+import HomeNameWrapper from "./HomeNameWrapper";
 import HomeSubTitleWrapper from "./HomeSubTitleWrapper";
 import HomeTitleWrapper from "./HomeTitleWrapper";
 
@@ -12,6 +13,7 @@ function HomeForm(props: HomeFormI) {
     <form noValidate autoComplete="off">
         <HomeTitleWrapper onInputChange={handleChangeTitle} ></HomeTitleWrapper>
         <HomeSubTitleWrapper />
+        <HomeNameWrapper />
     </form>
   );
 }

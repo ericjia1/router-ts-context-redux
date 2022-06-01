@@ -20,7 +20,7 @@ function HomeInput(props: HomeInputI) {
       InputLabelProps={{
         shrink: true,
       }}
-      placeholder=""
+      placeholder="" 
       helperText={notes}
       fullWidth
       margin="normal"

@@ -9,7 +9,7 @@ export interface HomeState {
 
 export const HomeDefaultState: HomeState = {
   userInfo: {
-    subTitle: "Default Sub Title",
+    subTitle: "",
   },
   history: {
     updatedTimes: 0,
